@@ -7,7 +7,7 @@ import (
 	"github.com/google/gopacket/pcap"
 )
 
-func main() {
+func TMain() {
 	// Set the device name to capture packets from
 	deviceName := "enp0s3"
 
