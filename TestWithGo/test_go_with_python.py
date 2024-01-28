@@ -9,19 +9,31 @@ def run_go_tests():
         package_dirs = ["TestWithGo","AnotherGoTest"]
         
         for package_dir in package_dirs:
-            package_path = os.path.join("../../Gotest/", package_dir)
+            package_path = os.path.abspath(os.path.join("../../Gotest", package_dir))
+            
                     
-           # result = subprocess.run(["go", "test", "-v", "./"], capture_output=True, text=True, cwd=package_path)
-            result = subprocess.Popen(["go", "test", "-v", "./"], cwd=package_path,stdout=subprocess.PIPE)
-            output, err = result.communicate()
+            result = subprocess.run(["go", "test", "-v", "./..."], capture_output=True, text=True, cwd=package_path, check=True)
+           # result = subprocess.Popen(["go", "test", "-v", "./"], cwd=package_path,stdout=subprocess.PIPE)
+            #output, err = result.communicate()
             # Print the output
-            print("re ",result.stdout)
+            #print("re ",result)
             #Process test output
-            tests_passed = output.decode("utf-8").count("PASS")
-            tests_failed = output.decode("utf-8").count("FAIL")
-            print(f"Results for package {package_path}:")
-            print(f"Passed: {tests_passed}")
-            print(f"Failed: {tests_failed}")
+            output = result.stdout
+            error_message = result.stderr
+            if output:
+                print(f"Go test output with package name  -> {package_dir}:\n",output)
+                
+                passes = output.count('--- PASS')
+                fails = output.count('--- FAIL')
+                print(f"Passes: {passes}, Fails: {fails}")
+            if error_message:
+                print("Error message:\n", error_message)
+                
+            #tests_passed = output.decode("utf-8").count("PASS")
+            #tests_failed = output.decode("utf-8").count("FAIL")
+           # print(f"Results for package {package_path}:")
+            #print(f"Passed: {tests_passed}")
+            #print(f"Failed: {tests_failed}")
 
             # Check for test failures
             if result.returncode != 0:
