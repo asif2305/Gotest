@@ -46,7 +46,7 @@ func main() {
 	}
 	fmt.Println("all of the data", people2)
 	for i, v := range people2 {
-		fmt.Println("--- person numer ", i)
+		fmt.Println("--- person numer are: ", i)
 		fmt.Println(v.First, v.Last, v.Age)
 
 	}
