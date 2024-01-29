@@ -37,5 +37,18 @@ func main() {
 		fmt.Println(err)
 	}
 	fmt.Println(string(bs))
+	// unarshal
+	ubs := []byte(string(bs))
+	var people2 []person
+	err2 := json.Unmarshal(ubs, &people2)
+	if err2 != nil {
+		fmt.Println(err2)
+	}
+	fmt.Println("all of the data", people2)
+	for i, v := range people2 {
+		fmt.Println("--- person numer", i)
+		fmt.Println(v.First, v.Last, v.Age)
+
+	}
 
 }
