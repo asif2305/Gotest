@@ -8,7 +8,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 )
 
-// Package chi is a small, idiomatic and composable router for building HTTP services.
+// Package chi is a small, idiomatic and composable router for building HTTP services .
 func main() {
 
 	router := chi.NewRouter()
