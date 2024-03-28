@@ -9,4 +9,13 @@ require (
 	golang.org/x/net v0.18.0
 )
 
-require golang.org/x/sys v0.14.0
+require golang.org/x/sys v0.18.0
+
+require (
+	github.com/HewlettPackard/structex v1.0.4 // indirect
+	github.com/antonfisher/nested-logrus-formatter v1.3.1 // indirect
+	github.com/free5gc/aper v1.0.5 // indirect
+	github.com/free5gc/ngap v1.0.7 // indirect
+	github.com/go-chi/chi/v5 v5.0.12 // indirect
+	github.com/sirupsen/logrus v1.9.3 // indirect
+)
