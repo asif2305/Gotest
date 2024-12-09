@@ -3,7 +3,7 @@ package application
 import (
 	"net/http"
 
-	"GO/BuildMicroserviceWithRedis/handler"
+	"GOTEST/BuildMicroserviceWithRedis/handler"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"

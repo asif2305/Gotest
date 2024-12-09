@@ -1,7 +1,7 @@
 package main
 
 import (
-	application "GO/BuildMicroserviceWithRedis/Application"
+	application "GOTEST/BuildMicroserviceWithRedis/Application"
 	"context"
 	"fmt"
 )

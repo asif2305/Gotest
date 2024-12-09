@@ -1,21 +1,22 @@
-module GO
+module GOTEST
 
-go 1.18
+go 1.23
+
+toolchain go1.23.3
 
 require (
 	github.com/google/gopacket v1.1.19
-	github.com/songgao/packets v0.0.0-20160404182456-549a10cd4091
 	golang.org/x/exp v0.0.0-20231110203233-9a3e6036ecaa
-	golang.org/x/net v0.18.0
+	golang.org/x/net v0.18.0 // indirect
 )
 
-require golang.org/x/sys v0.18.0
+require (
+	github.com/go-chi/chi/v5 v5.0.12
+	golang.org/x/sys v0.18.0 // indirect
+)
 
 require (
-	github.com/HewlettPackard/structex v1.0.4 // indirect
-	github.com/antonfisher/nested-logrus-formatter v1.3.1 // indirect
-	github.com/free5gc/aper v1.0.5 // indirect
-	github.com/free5gc/ngap v1.0.7 // indirect
-	github.com/go-chi/chi/v5 v5.0.12 // indirect
-	github.com/sirupsen/logrus v1.9.3 // indirect
+	github.com/cespare/xxhash/v2 v2.2.0 // indirect
+	github.com/dgryski/go-rendezvous v0.0.0-20200823014737-9f7001d12a5f // indirect
+	github.com/redis/go-redis/v9 v9.7.0 // indirect
 )
