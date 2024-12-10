@@ -8,6 +8,7 @@ import (
 	"os/signal"
 )
 
+// learning: https://www.youtube.com/watch?v=qCv-q37qjZU&t=828s
 // Package chi is a small, idiomatic and composable router for building HTTP services .
 func main() {
 	app := application.New()
